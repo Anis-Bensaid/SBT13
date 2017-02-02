@@ -1,5 +1,5 @@
 rm(list=ls())
-bd<-read.csv2("C:/Users/enysb/Dropbox/Dossier de l'équipe SBT13/Cliente/bdmieRpp2.csv")
+bd<-read.csv2("C:/Users/enysb/Dropbox/Dossier de l'�quipe SBT13/Cliente/bdmieRpp2.csv")
 bd1 <-bd[bd$age<31,]
 
 # on cherche la corrélation entre chaque item de AQOLS contre tout le reste 
@@ -90,18 +90,16 @@ nomcolonnes=c()
 
 for (i in (1:35)){nomlignes=c(nomlignes,names(data[i]))}
 
-for (i in (36:53)){nomcolonnes=c(nomcolonnes,names(data[i]))}
+for (i in (36:52)){nomcolonnes=c(nomcolonnes,names(data[i]))}
 
 for (i in (1:35))  
-  {for (j in (36:53)) 
-  {Correlation[i,j-35]=as.numeric(cor.test(as.numeric(unlist(data[i])), as.numeric(unlist(data[j])), method="spearman")[3])}}
-
+  
+{for (j in (36:52)) 
+{Correlation[i,j-35]=as.numeric(cor.test(as.numeric(unlist(data[i])), as.numeric(unlist(data[j])), method="spearman")[3])}}
 
 
 rownames(Correlation)=nomlignes
 colnames(Correlation)=nomcolonnes
 
-require(plot3D)
-library(plot3D)
-persp(z = Correlation, theta = 120)
+persp(z = Correlation, ,theta=30,phi=15,xlab='AQoLS',ylab='Consommations',zlab='p-value',col="lightgreen",expand=0.5,shade=0.8,ticktype="detailed")
 
