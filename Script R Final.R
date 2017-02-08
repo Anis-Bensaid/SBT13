@@ -1,5 +1,6 @@
 rm(list=ls())
-bd<-read.csv2("C:/Users/enysb/Dropbox/Dossier de l'équipe SBT13/Cliente/bdmieRpp2.csv")
+library(readxl)
+bd <- read_excel("~/Documents/SBT13/bdmieRpp2.xls")
 bd1 <-bd[bd$age<31,]
 
 # on cherche la corrÃ©lation entre chaque item de AQOLS contre tout le reste 
@@ -104,4 +105,4 @@ colnames(Correlation)=nomcolonnes
 persp(z = Correlation, ,theta=30,phi=15,xlab='AQoLS',ylab='Consommations',zlab='p-value',col="lightgreen",expand=0.5,shade=0.8,ticktype="detailed")
 
 
-anis
+
