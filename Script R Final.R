@@ -103,3 +103,5 @@ colnames(Correlation)=nomcolonnes
 
 persp(z = Correlation, ,theta=30,phi=15,xlab='AQoLS',ylab='Consommations',zlab='p-value',col="lightgreen",expand=0.5,shade=0.8,ticktype="detailed")
 
+
+anis
