@@ -3,7 +3,7 @@ rm(list=ls())
 library(readxl)
 bd <- read_excel("~/Desktop/Projet_SBT13/Github/SBT13/bdmieRpp2.xls")
 bd1 <-bd[bd$age<31,]
-#Arthur t'es qu'un gros enfoiré
+#Toi aussi connard
 # on cherche la corrélation entre chaque item de AQOLS contre tout le reste 
 
 # Il faut transformer les réponses aux autres questions en score et les ranger dans une matrice
