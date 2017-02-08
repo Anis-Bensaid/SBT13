@@ -52,7 +52,7 @@ data$atot <- data$a1+data$a2+data$a3+ data$a4+data$a5+data$a6+ data$a7+data$a8+d
 # suppression d'une colonne inutile :
 data<-data[,-1]
 # Genre
-data$Genre <- ifelse(bd1$sex=="Un homme", 1, ifelse(bd1$sex=="Une femme", 2,ifelse(bd1$Sex== "Indéterminé", NA ,ifelse(bd1$sex == "Ne sait pas", NA,NA))))
+data$Genre <- ifelse(bd1$sex=="Un homme", 1, ifelse(bd1$sex=="Une femme", 2,ifelse(bd1$sex== "Indéterminé", NA ,ifelse(bd1$sex == "Ne sait pas", NA,NA))))
 # Fréquence binge-drinking
 data$FreqBinge <- ifelse(bd1$frqoh== "Jamais", 0, ifelse(bd1$binge== "non", 0, ifelse(bd1$frqb1=="1 fois", 1, ifelse(bd1$frqb2=="2 fois", 2, ifelse(bd1$frqb3=="3 é 5 fois", 3, ifelse(bd1$frqb6=="6 é 9 fois", 4, ifelse(bd1$frqb10=="10 fois ou plus", 5, NA)))))))
 # Autres substances 
@@ -71,7 +71,7 @@ data$FreqConso <- ifelse(bd1$frqoh=="Jamais", 0, ifelse(bd1$frqoh=="Une fois par
 # Nombre de verres consommés en moyenne é une occasion
 data$NbVerreMoy <- ifelse(bd1$nbvrtyp=="1 ou 2", 0, ifelse(bd1$nbvrtyp =="3 ou 4", 1, ifelse(bd1$nbvrtyp == "5 ou 6", 2, ifelse(bd1$nbvrtyp == "7 é 9", 3, ifelse(bd1$nbvrtyp =="10 ou plus", 4, NA)))))
 #Fréquence de consommation de plus de six verres en une occasion
-data$FreqSupSixVerre <-bd1$sivr
+data$FreqSupSixVerre <-bd1$sixvr
 #Audit-C
 data$Audit <- data$FreqConso + data$NbVerreMoy+ data$FreqSupSixVerre
 # Image
